@@ -1,27 +1,19 @@
 <template>
   <div>
-    <b-list-group>
-      <b-list-group-item variant="primary">{{
-        questions[0].question
-      }}</b-list-group-item>
-      <b-list-group-item variant="primary">{{
-        questions[1].question
-      }}</b-list-group-item>
-      <b-list-group-item variant="primary">{{
-        questions[2].question
-      }}</b-list-group-item>
-    </b-list-group>
-    <div>
-      <b-button>Button</b-button>
-      <b-button variant="danger">Button</b-button>
-      <b-button variant="success">Next</b-button>
-    </div>
+    <h1>Questions</h1>
+
+    <Question :question="questions[0]" />
   </div>
 </template>
 
 <script>
 import { fetchQuestions } from "../api/questions";
+import Question from "../components/question/Question";
+
 export default {
+  components: {
+    Question
+  },
   data() {
     return {
       questions: []
