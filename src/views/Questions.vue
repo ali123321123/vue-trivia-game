@@ -1,11 +1,34 @@
 <template>
   <div>
-    <h1>Questions</h1>
+   <b-list-group>
+  <b-list-group-item variant="primary">{{questions[0].question}}</b-list-group-item>
+    <b-list-group-item variant="primary">{{questions[1].question}}</b-list-group-item>
+      <b-list-group-item variant="primary">{{questions[2].question}}</b-list-group-item>
+
+</b-list-group>
+<div>
+  <b-button>Button</b-button>
+  <b-button variant="danger">Button</b-button>
+  <b-button variant="success">Next</b-button>
+</div>
   </div>
 </template>
 
 <script>
-export default {};
+import { fetchQuestions } from "../api/questions"
+export default {
+  data() {
+    return {
+    questions: []
+    }
+  },
+  created() {
+    fetchQuestions().
+    then((questions) => (this.questions = questions.results )
+    .catch((error) => (this.error = error.message))
+    )}
+};
+
 </script>
 
 <style></style>
