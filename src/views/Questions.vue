@@ -28,11 +28,7 @@ export default {
     };
   },
   created() {
-    fetchQuestions().then(questions =>
-      (this.questions = questions.results).catch(
-        error => (this.error = error.message)
-      )
-    );
+    fetchQuestions().then(questions => (this.questions = questions));
   }
 };
 </script>
