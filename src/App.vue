@@ -9,20 +9,18 @@
     </head>
     <div id="app">
       <Header />
-      <router-view />      
+      <router-view />
     </div>
   </html>
 </template>
 <script>
-import Header from "./views/Header.vue"
+import Header from "./views/Header.vue";
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Header
-  } 
-}
+  }
+};
 </script>
 
-<style >
-
-</style>
+<style></style>
