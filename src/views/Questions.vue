@@ -29,7 +29,11 @@ export default {
   methods: {
     handleAnswerSubmitted(correct) {
       this.questions[this.currentQuestion].answered_correctly = correct;
-      this.currentQuestion += 1;
+      if (this.currentQuestion < this.questions.length - 1) {
+        this.currentQuestion += 1;
+      } else {
+        this.$router.push("/results");
+      }
     }
   }
 };
