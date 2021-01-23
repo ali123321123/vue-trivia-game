@@ -5,24 +5,16 @@
       <AnswerButton
         v-for="(answer, index) in answers"
         :key="index"
+        :index="index"
         :answer="answer"
         :class="[selectedAnswerIndex === index ? 'selected' : '']"
-        @answer-clicked="handleAnswerClicked, clickedAnswer(index)"
+        @answer-clicked="handleAnswerClicked"
       />
     </b-list-group>
 
-      <!-- <b-list-group-item  v-for="(answer, index) in answers"
-      :key="index"  :class="[selectedAnswerIndex === index ? 'selected' : '']"
-      @click="clickedAnswer(index)">{{ answer }}</b-list-group-item> -->
-    
-    <!-- <AnswerButton
-      :answer="question.correct_answer"
-      @answer-clicked="handleAnswerClicked"
-    /> -->
     <div class="d-flex justify-content-center">
       <b-button @click="submitAnswerClicked" variant="success">Next</b-button>
     </div>
-   
   </div>
 </template>
 
@@ -39,48 +31,48 @@ export default {
       required: true,
       default: function() {
         return {
-          question: '',
+          question: "",
           incorrect_answers: []
         };
       }
-    },
+    }
   },
   computed: {
     answers() {
-    let answers = [...this.question.incorrect_answers]
-    answers.push(this.question.correct_answer)
-      for (var i = answers.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp =  answers[i];
-        answers[i] =  answers[j];
-        answers[j] = temp;
+      if (this.question.question === "") {
+        return [];
+      } else {
+        let answers = [
+          ...this.question.incorrect_answers,
+          this.question.correct_answer
+        ];
+        for (var i = answers.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = answers[i];
+          answers[i] = answers[j];
+          answers[j] = temp;
+        }
+        return answers;
       }
-    return answers
     }
   },
   data() {
     return {
-      selectedAnswer: '',
+      selectedAnswer: "",
       selectedAnswerIndex: null
-    }
+    };
   },
   methods: {
-    handleAnswerClicked(answer) {
+    handleAnswerClicked(answer, index) {
       this.selectedAnswer = answer;
-    },
-    clickedAnswer(index) {
       this.selectedAnswerIndex = index;
     },
     submitAnswerClicked() {
       this.selectedAnswerIndex = null;
-      if (this.selectedAnswer === this.question.correct_answer) {
-        this.$emit("answer-submitted", true);
-      } else {
-        this.$emit("answer-submitted", false);
-      }
+      this.$emit("answer-submitted", this.selectedAnswer);
     }
   }
-}
+};
 </script>
 
 <style scoped>
