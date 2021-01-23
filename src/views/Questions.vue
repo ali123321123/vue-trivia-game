@@ -32,18 +32,17 @@ export default {
       } else {
         this.$router.push("/results");
       }
-    } 
+    }
   }
 };
 </script>
 
 <style>
-#quiz{
+#quiz {
   margin: auto;
   margin-top: 10em;
   width: 50%;
   border: 3px solid green;
   padding: 50px;
-
 }
 </style>

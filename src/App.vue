@@ -14,7 +14,7 @@
   </html>
 </template>
 <script>
-import Header from "./views/Header.vue";
+import Header from "./components/header/Header.vue";
 export default {
   name: "app",
   components: {

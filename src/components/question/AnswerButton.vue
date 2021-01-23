@@ -1,5 +1,7 @@
 <template>
-  <b-list-group-item id="answer-button" @click="onAnswerClicked">{{ answer }}</b-list-group-item>
+  <b-list-group-item id="answer-button" @click="onAnswerClicked">
+    {{ answer }}
+  </b-list-group-item>
 </template>
 
 <script>
