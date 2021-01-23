@@ -4,7 +4,7 @@
     <b-list-group>
       <AnswerButton
         v-for="(answer, index) in answers"
-        :key="answer.id"
+        :key="index"
         :index="index"
         :answer="answer"
         :class="[selectedAnswerIndex === index ? 'selected' : '']"
