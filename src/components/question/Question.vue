@@ -1,11 +1,15 @@
 <template>
   <div>
     <p>{{ question.question }}</p>
-    <AnswerButton :answer="question.correct_answer" />
+    <AnswerButton
+      :answer="question.correct_answer"
+      @answer-clicked="handleAnswerClicked"
+    />
     <AnswerButton
       v-for="answer in question.incorrect_answers"
       :key="answer.id"
       :answer="answer"
+      @answer-clicked="handleAnswerClicked"
     />
   </div>
 </template>
@@ -31,8 +35,12 @@ export default {
     }
   },
   methods: {
-    onAnswerClicked() {
-      this.$emit("answer-clicked", this.question.answer);
+    handleAnswerClicked(answer) {
+      if (answer === this.question.correct_answer) {
+        this.$emit("answer-submitted", true);
+      } else {
+        this.$emit("answer-submitted", false);
+      }
     }
   }
 };

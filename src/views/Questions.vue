@@ -2,7 +2,10 @@
   <div>
     <h1>Questions</h1>
 
-    <Question :question="questions[0]" />
+    <Question
+      :question="questions[currentQuestion]"
+      @answer-submitted="handleAnswerSubmitted"
+    />
   </div>
 </template>
 
@@ -16,11 +19,22 @@ export default {
   },
   data() {
     return {
-      questions: []
+      questions: [],
+      currentQuestion: 0
     };
   },
   created() {
     fetchQuestions().then(questions => (this.questions = questions));
+  },
+  methods: {
+    handleAnswerSubmitted(correct) {
+      this.questions[this.currentQuestion].answered_correctly = correct;
+      if (this.currentQuestion < this.questions.length - 1) {
+        this.currentQuestion += 1;
+      } else {
+        this.$router.push("/results");
+      }
+    }
   }
 };
 </script>

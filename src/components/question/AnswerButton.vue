@@ -1,5 +1,5 @@
 <template>
-  <b-button id="answer-button">{{ answer }}</b-button>
+  <b-button id="answer-button" @click="onAnswerClicked">{{ answer }}</b-button>
 </template>
 
 <script>
@@ -9,6 +9,11 @@ export default {
       type: String,
       required: true,
       default: "Answer"
+    }
+  },
+  methods: {
+    onAnswerClicked() {
+      this.$emit("answer-clicked", this.answer);
     }
   }
 };
