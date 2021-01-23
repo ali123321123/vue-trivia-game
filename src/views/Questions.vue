@@ -30,6 +30,9 @@ export default {
       if (this.currentQuestion < this.questions.length - 1) {
         this.currentQuestion += 1;
       } else {
+        // Not a fantastic way to store state, but it works for such a small project
+        this.$root.$data.questions = this.questions;
+
         this.$router.push("/results");
       }
     }
