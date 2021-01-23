@@ -9,11 +9,16 @@ export default {
       type: String,
       required: true,
       default: "Answer"
+    },
+    index: {
+      type: Number,
+      required: true,
+      default: 0
     }
   },
   methods: {
     onAnswerClicked() {
-      this.$emit("answer-clicked", this.answer);
+      this.$emit("answer-clicked", this.answer, this.index);
     }
   }
 };

@@ -4,10 +4,11 @@
     <b-list-group>
       <AnswerButton
         v-for="(answer, index) in answers"
-        :key="index"
+        :key="answer.id"
+        :index="index"
         :answer="answer"
         :class="[selectedAnswerIndex === index ? 'selected' : '']"
-        @answer-clicked="handleAnswerClicked, clickedAnswer(index)"
+        @answer-clicked="handleAnswerClicked"
       />
     </b-list-group>
 
@@ -65,10 +66,8 @@ export default {
     }
   },
   methods: {
-    handleAnswerClicked(answer) {
+    handleAnswerClicked(answer, index) {
       this.selectedAnswer = answer;
-    },
-    clickedAnswer(index) {
       this.selectedAnswerIndex = index;
     },
     submitAnswerClicked() {
