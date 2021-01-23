@@ -39,15 +39,21 @@ export default {
   },
   computed: {
     answers() {
-      let answers = [...this.question.incorrect_answers];
-      answers.push(this.question.correct_answer);
-      for (var i = answers.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = answers[i];
-        answers[i] = answers[j];
-        answers[j] = temp;
+      if (this.question.question === "") {
+        return [];
+      } else {
+        let answers = [
+          ...this.question.incorrect_answers,
+          this.question.correct_answer
+        ];
+        for (var i = answers.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = answers[i];
+          answers[i] = answers[j];
+          answers[j] = temp;
+        }
+        return answers;
       }
-      return answers;
     }
   },
   data() {
