@@ -69,11 +69,7 @@ export default {
     },
     submitAnswerClicked() {
       this.selectedAnswerIndex = null;
-      if (this.selectedAnswer === this.question.correct_answer) {
-        this.$emit("answer-submitted", true);
-      } else {
-        this.$emit("answer-submitted", false);
-      }
+      this.$emit("answer-submitted", this.selectedAnswer);
     }
   }
 };

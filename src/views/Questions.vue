@@ -25,8 +25,8 @@ export default {
     fetchQuestions().then(questions => (this.questions = questions));
   },
   methods: {
-    handleAnswerSubmitted(isCorrect) {
-      this.questions[this.currentQuestion].answered_correctly = isCorrect;
+    handleAnswerSubmitted(answer) {
+      this.questions[this.currentQuestion].given_answer = answer;
       if (this.currentQuestion < this.questions.length - 1) {
         this.currentQuestion += 1;
       } else {

@@ -1,5 +1,9 @@
 <template>
-  <p :class="[question.answered_correctly === true ? 'win' : 'fail']">
+  <p
+    :class="[
+      question.given_answer === question.correct_answer ? 'win' : 'fail'
+    ]"
+  >
     {{ question.question }}
   </p>
 </template>
