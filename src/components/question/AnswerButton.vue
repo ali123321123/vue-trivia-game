@@ -1,5 +1,5 @@
 <template>
-  <b-button id="answer-button" @click="onAnswerClicked">{{ answer }}</b-button>
+  <b-list-group-item id="answer-button" @click="onAnswerClicked">{{ answer }}</b-list-group-item>
 </template>
 
 <script>
@@ -18,9 +18,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.answer-button {
-  margin: 10px;
-}
-</style>
