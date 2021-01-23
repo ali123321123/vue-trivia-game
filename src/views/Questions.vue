@@ -1,9 +1,11 @@
 <template>
+<div id="questions-component">
   <div id="quiz">
-    <Question
+    <Question  
       :question="questions[currentQuestion]"
       @answer-submitted="handleAnswerSubmitted"
     />
+  </div>
   </div>
 </template>
 
@@ -40,12 +42,18 @@ export default {
 };
 </script>
 
-<style>
+<style >
 #quiz {
   margin: auto;
-  margin-top: 10em;
-  width: 50%;
-  border: 3px solid green;
-  padding: 50px;
+ 
+  width: 60%;
+  padding: 10em;
+  
 }
+#questions-component{
+   height: 100vh;
+   
+  background-image: url('../assets/background-all.jpg')
+}
+
 </style>
