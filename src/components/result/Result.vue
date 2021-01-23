@@ -1,11 +1,17 @@
 <template>
-  <p
+  <div
     :class="[
+      'result-view',
       question.given_answer === question.correct_answer ? 'win' : 'fail'
     ]"
   >
-    {{ question.question }}
-  </p>
+    <p>{{ question.question }}</p>
+
+    <span>Correct answer: </span>
+    <span>{{ question.correct_answer }}</span>
+    <span> - Your answer: </span>
+    <span>{{ question.given_answer }}</span>
+  </div>
 </template>
 
 <script>
@@ -31,5 +37,10 @@ export default {
 
 .fail {
   background: pink;
+}
+
+.result-view {
+  padding: 1em;
+  border-bottom: 1px solid;
 }
 </style>
