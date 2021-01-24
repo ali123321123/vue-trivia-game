@@ -1,12 +1,15 @@
 <template>
   <div id="result-page">
-      <div>
-      <b-button id="btn"  variant="primary" href="#/home">Play again</b-button>
-      </div>
+    <b-button id="btn-play-again" variant="primary" href="#/home">
+      Play again
+    </b-button>
+
     <div id="result-text-view">
-    <h1  class="result-text">Results</h1>
-    <h2 class="result-text">Score: {{ score }}<i class="fas fa-coins"></i></h2>
-   </div>
+      <h1 class="result-text">Results</h1>
+      <h2 class="result-text">
+        Score: {{ score }}<i class="fas fa-coins"></i>
+      </h2>
+    </div>
     <Result
       v-for="question in questions"
       :key="question.id"
@@ -45,22 +48,31 @@ export default {
 </script>
 
 <style>
-#result-page{
-background-image: url("../assets/background-all.jpg");
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-font-weight: 600;
+#result-page {
+  min-height: 100vh;
+  background-image: url("../assets/background-all.jpg");
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
 }
-#result-text-view{
+
+#result-text-view {
   text-align: center;
-vertical-align: middle;
-line-height: 90px;
+  vertical-align: middle;
+  line-height: 90px;
 }
-.result-text{
+
+#btn-play-again {
+  position: absolute;
+  margin: 2em 5%;
+}
+
+.result-text {
   color: aliceblue;
 }
-.fa-coins{
+
+.fa-coins {
   color: rgb(255, 227, 113);
- padding-left: 8px;
- 
+  padding-left: 8px;
 }
 </style>

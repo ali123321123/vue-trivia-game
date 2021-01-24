@@ -1,8 +1,8 @@
 <template>
   <div>
-     <b-button id="ques-btn" variant="info"> {{ question.question }}</b-button>
+    <div id="question">{{ question.question }}</div>
 
-    <b-list-group >
+    <b-list-group>
       <AnswerButton
         v-for="(answer, index) in answers"
         :key="index"
@@ -80,10 +80,12 @@ export default {
 .selected {
   background-color: aquamarine;
 }
-#ques-btn{
-  color:white;
-  width:100%;
-  padding: 20px;
+
+#question {
+  background-color: lightseagreen;
+  color: white;
+  padding: 1em;
   font-size: 24px;
+  border-radius: 4px;
 }
 </style>

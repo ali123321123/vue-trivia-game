@@ -1,6 +1,6 @@
 import VueRouter from "vue-router";
 import Home from "./views/Home.vue";
-import Questions from "./views/Questions.vue";
+import Game from "./views/Game.vue";
 import Results from "./views/Results.vue";
 
 const routes = [
@@ -11,9 +11,9 @@ const routes = [
     alias: "/home"
   },
   {
-    path: "/questions",
-    name: "Questions",
-    component: Questions
+    path: "/game",
+    name: "Game",
+    component: Game
   },
   {
     path: "/results",

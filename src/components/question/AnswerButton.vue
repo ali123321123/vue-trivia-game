@@ -1,5 +1,9 @@
 <template>
-  <b-list-group-item style="font-size: 24px;"  id="answer-button" @click="onAnswerClicked">
+  <b-list-group-item
+    style="font-size: 24px;"
+    id="answer-button"
+    @click="onAnswerClicked"
+  >
     {{ answer }}
   </b-list-group-item>
 </template>
@@ -25,6 +29,9 @@ export default {
   }
 };
 </script>
-<style scoped>
 
+<style>
+#answer-button {
+  cursor: pointer;
+}
 </style>
