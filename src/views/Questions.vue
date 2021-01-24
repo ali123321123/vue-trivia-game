@@ -3,7 +3,7 @@
   <div class="progress-bar-text">
     <h5  style="color: white;">{{value}} of 10</h5>
   </div>
-    <b-progress id="progress-bar" variant="info"  :value="value" :max="max" show-value class="mb-3"></b-progress>
+    <b-progress id="progress-bar" variant="success" :value="value" :max="max" show-value class="mb-3"></b-progress>
   <div id="quiz"> 
     <Question  
       :question="questions[currentQuestion]"

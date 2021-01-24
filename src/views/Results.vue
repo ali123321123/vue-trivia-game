@@ -1,5 +1,8 @@
 <template>
   <div id="result-page">
+     <div>
+      <b-button id="btn"  variant="primary" href="#/home">Play again</b-button>
+      </div>
     <div id="result-text-view">
     <h1  class="result-text">Results</h1>
     <h2 class="result-text">Score: {{ score }}<i class="fas fa-coins"></i></h2>
