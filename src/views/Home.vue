@@ -1,7 +1,7 @@
 <template>
   <b-container id="start-screen" fluid>
     <b-row id="button-row">
-      <b-button id="btn-start-game" variant="primary" href="#/questions">
+      <b-button id="btn-start-game" variant="primary" href="#/game">
         Let's Start
       </b-button>
     </b-row>
