@@ -49,6 +49,7 @@ export default {
 
 <style>
 #result-page {
+  min-height: 100vh;
   background-image: url("../assets/background-all.jpg");
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
