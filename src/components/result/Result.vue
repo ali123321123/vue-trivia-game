@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     :class="[
       'result-view',
       question.given_answer === question.correct_answer ? 'win' : 'fail'
@@ -40,16 +40,18 @@ export default {
 }
 
 .result-view {
-   margin: 0 auto;
+  margin: 0 auto;
   width: 74%;
   border-bottom: 1px solid;
   text-align: center;
-vertical-align: middle;
-line-height: 90px;  
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-font-weight: 600;
+  vertical-align: middle;
+  line-height: 90px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 600;
 }
-.answer{
+
+.answer {
   color: rgb(98, 0, 255);
 }
 </style>

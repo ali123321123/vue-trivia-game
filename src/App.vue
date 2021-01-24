@@ -15,26 +15,24 @@
 <script>
 export default {
   name: "app",
-  components: {
-  
-  }
+  components: {}
 };
 </script>
 
-
-<style >
+<style>
 * {
-    margin: 0;
+  margin: 0;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
-#app{
+
+#app {
   min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -30px;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -30px;
 }
-
 </style>
