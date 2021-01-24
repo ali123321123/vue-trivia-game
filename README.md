@@ -1,24 +1,16 @@
-# triviagame
+# Vue Trivia Game
+
+This is our submission to assignment 2 of .Net Fullstack Upskill - Winter 2021 - Oslo.
+
+It is a simple quiz game where you answer some questions, and receive a score.
 
 ## Project setup
-```
-npm install
-```
+- Clone the repository
+- Run `npm install`
 
 ### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- Run `npm run serve` or `npm start`
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### The team
+- Ali Zedan
+- Birger Topphol
