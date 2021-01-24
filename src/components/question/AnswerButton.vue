@@ -29,3 +29,9 @@ export default {
   }
 };
 </script>
+
+<style>
+#answer-button {
+  cursor: pointer;
+}
+</style>
