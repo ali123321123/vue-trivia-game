@@ -1,5 +1,9 @@
 <template>
   <div id="result-page">
+    <b-button id="btn-play-again" variant="primary" href="#/home">
+      Play again
+    </b-button>
+
     <div id="result-text-view">
       <h1 class="result-text">Results</h1>
       <h2 class="result-text">
@@ -55,6 +59,11 @@ export default {
   text-align: center;
   vertical-align: middle;
   line-height: 90px;
+}
+
+#btn-play-again {
+  position: absolute;
+  margin: 2em 5%;
 }
 
 .result-text {

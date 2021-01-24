@@ -1,5 +1,18 @@
 <template>
   <b-container id="game-screen" fluid>
+    <div id="progress-bar-text">
+      <h5 style="color: white;">
+        {{ currentQuestion + 1 }} of {{ numQuestions }}
+      </h5>
+    </div>
+    <b-progress
+      id="progress-bar"
+      variant="success"
+      :value="currentQuestion + 1"
+      :max="numQuestions"
+      show-value
+      class="mb-3"
+    ></b-progress>
     <b-container id="quiz">
       <Question
         :question="questions[currentQuestion]"
@@ -26,11 +39,17 @@ export default {
   created() {
     fetchQuestions().then(questions => (this.questions = questions));
   },
+  computed: {
+    numQuestions() {
+      return this.questions.length;
+    }
+  },
   methods: {
     handleAnswerSubmitted(answer) {
       this.questions[this.currentQuestion].given_answer = answer;
       if (this.currentQuestion < this.questions.length - 1) {
         this.currentQuestion += 1;
+        this.value += 1;
       } else {
         // Not a fantastic way to store state, but it works for such a small project
         this.$root.$data.questions = this.questions;
@@ -48,6 +67,15 @@ export default {
   background-image: url("../assets/background-all.jpg");
   background-size: cover;
   background-position: center;
+}
+#progress-bar {
+  width: 40%;
+  margin: auto;
+}
+
+#progress-bar-text {
+  padding-top: 1em;
+  text-align: center;
 }
 
 #quiz {
