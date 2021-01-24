@@ -1,8 +1,9 @@
 <template>
-  <div>
-    <h1>Results</h1>
-    <h2>Score: {{ score }}</h2>
-
+  <div id="result-page">
+    <div id="result-text-view">
+    <h1  class="result-text">Results</h1>
+    <h2 class="result-text">Score: {{ score }}<i class="fas fa-coins"></i></h2>
+   </div>
     <Result
       v-for="question in questions"
       :key="question.id"
@@ -40,4 +41,23 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#result-page{
+background-image: url("../assets/background-all.jpg");
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+font-weight: 600;
+}
+#result-text-view{
+  text-align: center;
+vertical-align: middle;
+line-height: 90px;
+}
+.result-text{
+  color: aliceblue;
+}
+.fa-coins{
+  color: rgb(255, 227, 113);
+ padding-left: 8px;
+ 
+}
+</style>
