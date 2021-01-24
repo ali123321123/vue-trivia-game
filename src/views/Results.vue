@@ -1,6 +1,6 @@
 <template>
   <div id="result-page">
-     <div>
+      <div>
       <b-button id="btn"  variant="primary" href="#/home">Play again</b-button>
       </div>
     <div id="result-text-view">
