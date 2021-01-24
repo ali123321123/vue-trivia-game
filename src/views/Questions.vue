@@ -1,6 +1,10 @@
 <template>
 <div id="questions-component">
-  <div id="quiz">
+  <div class="progress-bar-text">
+    <h5  style="color: white;">{{value}} of 10</h5>
+  </div>
+    <b-progress id="progress-bar" variant="info"  :value="value" :max="max" show-value class="mb-3"></b-progress>
+  <div id="quiz"> 
     <Question  
       :question="questions[currentQuestion]"
       @answer-submitted="handleAnswerSubmitted"
@@ -20,7 +24,9 @@ export default {
   data() {
     return {
       questions: [],
-      currentQuestion: 0
+      currentQuestion: 0,
+       value: 0,
+        max: 10
     };
   },
   created() {
@@ -31,6 +37,7 @@ export default {
       this.questions[this.currentQuestion].given_answer = answer;
       if (this.currentQuestion < this.questions.length - 1) {
         this.currentQuestion += 1;
+        this.value +=1
       } else {
         // Not a fantastic way to store state, but it works for such a small project
         this.$root.$data.questions = this.questions;
@@ -54,6 +61,13 @@ export default {
    height: 100vh;
    
   background-image: url('../assets/background-all.jpg')
+}
+#progress-bar {
+  width: 40%;
+  margin: auto;
+}
+.progress-bar-text{
+   text-align: center;
 }
 
 </style>
