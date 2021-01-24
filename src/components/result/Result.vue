@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div 
     :class="[
       'result-view',
       question.given_answer === question.correct_answer ? 'win' : 'fail'
@@ -7,9 +7,9 @@
   >
     <p>{{ question.question }}</p>
 
-    <span>Correct answer: </span>
+    <span class="answer">Correct answer: </span>
     <span>{{ question.correct_answer }}</span>
-    <span> - Your answer: </span>
+    <span class="answer"> - Your answer: </span>
     <span>{{ question.given_answer }}</span>
   </div>
 </template>
@@ -40,7 +40,16 @@ export default {
 }
 
 .result-view {
-  padding: 1em;
+   margin: 0 auto;
+  width: 74%;
   border-bottom: 1px solid;
+  text-align: center;
+vertical-align: middle;
+line-height: 90px;  
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+font-weight: 600;
+}
+.answer{
+  color: rgb(98, 0, 255);
 }
 </style>
