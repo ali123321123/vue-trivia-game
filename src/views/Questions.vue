@@ -1,12 +1,12 @@
 <template>
-  <div id="questions-component">
-    <div id="quiz">
+  <b-container id="game-screen" fluid>
+    <b-container id="quiz">
       <Question
         :question="questions[currentQuestion]"
         @answer-submitted="handleAnswerSubmitted"
       />
-    </div>
-  </div>
+    </b-container>
+  </b-container>
 </template>
 
 <script>
@@ -43,14 +43,15 @@ export default {
 </script>
 
 <style>
-#quiz {
-  margin: auto;
-  width: 60%;
-  padding: 10em;
-}
-
-#questions-component {
+#game-screen {
   height: 100vh;
   background-image: url("../assets/background-all.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+#quiz {
+  max-width: 50em;
+  padding-top: 10vh;
 }
 </style>

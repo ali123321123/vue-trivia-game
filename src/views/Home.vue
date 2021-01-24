@@ -1,41 +1,29 @@
 <template>
-  <div class="jumbotron text-center">
-    <div :header="gameName">
-      <div id="btn-div">
-        <b-button
-          id="btn"
-          style="width:15%; padding:20px"
-          variant="primary"
-          href="#/questions"
-        >
-          Let's Start
-        </b-button>
-      </div>
-    </div>
-  </div>
+  <b-container id="start-screen" fluid>
+    <b-row id="button-row">
+      <b-button id="btn-start-game" variant="primary" href="#/questions">
+        Let's Start
+      </b-button>
+    </b-row>
+  </b-container>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      gameName: "Vue Trivia Game"
-    };
-  }
-};
-</script>
 
 <style>
-.jumbotron {
+#start-screen {
   height: 100vh;
   background-image: url("../assets/background.png");
+  background-size: cover;
+  background-position: center;
 }
 
-#btn-div {
-  margin-top: 27em;
+#button-row {
+  justify-content: center;
+  vertical-align: middle;
 }
 
-#btn {
-  color: white;
+#btn-start-game {
+  margin-top: 70vh;
+  padding: 20px 40px;
   font-size: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
